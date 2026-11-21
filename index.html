@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="Đảo Tiếng Anh">
 <meta name="theme-color" content="#19a7c9">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <title>Đảo Tiếng Anh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -259,6 +260,7 @@ svg{display:block}
 .panel h3{margin:0;font:800 22px/1.2 var(--disp)}
 .panel .go,.panel .btn2,.cta{justify-content:center;width:100%}
 .panel .mute{margin:0}
+.sstat{margin:0;padding:10px 14px;border-radius:14px;background:#fff1c2;font:800 18px/1.3 var(--disp);color:#b13368;text-align:center}
 .book{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 8px 0 rgba(13,43,62,.16)}
 .scene{background:linear-gradient(#bfeffa,#fff5d6);display:grid;place-items:center;min-height:clamp(170px,30vmin,300px);font-size:clamp(84px,16vmin,160px);line-height:1;text-align:center;padding:16px}
 .stxt{margin:0;padding:18px 22px 4px;text-align:center;font:800 clamp(26px,4.4vmin,42px)/1.2 var(--disp);text-wrap:balance;cursor:pointer}
@@ -363,14 +365,14 @@ const ALL={};T.forEach(t=>t.W.forEach(x=>{ALL[x.k]=x}));
 
 /* ---------- Bài hát: lời tự viết, giai điệu dân gian. Mỗi âm tiết (tách bằng dấu cách hoặc -) ứng với 1 nốt ---------- */
 const SONGS={
-col:{title:'The Colour Song',tune:'Twinkle Twinkle Little Star',bpm:100,lines:[
+col:{title:'The Colour Song',tune:'Twinkle Twinkle Little Star',bpm:100,meter:4,tr:2,lines:[
 ['Red and yel-low, pink and blue,','C4 C4 G4 G4 A4 A4 G4:2','Đỏ và vàng, hồng và xanh dương,'],
 ['Green and o-range, pur-ple too!','F4 F4 E4 E4 D4 D4 C4:2','Xanh lá và cam, cả màu tím nữa!'],
 ["What col-our is it? It's red!",'G4 G4 F4 F4 E4 E4 D4:2','Nó màu gì thế? Màu đỏ!'],
 ["What col-our is it? It's blue!",'G4 G4 F4 F4 E4 E4 D4:2','Nó màu gì thế? Màu xanh dương!'],
 ['Black and white and brown, hoo-ray!','C4 C4 G4 G4 A4 A4 G4:2','Đen, trắng và nâu, hoan hô!'],
 ['Col-ours, col-ours, I love you!','F4 F4 E4 E4 D4 D4 C4:2','Màu sắc ơi, mình yêu các bạn!']]},
-sch:{title:'In My Bag',tune:'Kìa con bướm vàng (Frère Jacques)',bpm:108,lines:[
+sch:{title:'In My Bag',tune:'Kìa con bướm vàng (Frère Jacques)',bpm:108,meter:4,tr:5,lines:[
 ['Pen and pen-cil,','C4 D4 E4 C4','Bút mực và bút chì,'],
 ['book and rul-er,','C4 D4 E4 C4','sách và thước kẻ,'],
 ['in my bag,','E4 F4 G4:2','ở trong cặp,'],
@@ -379,28 +381,28 @@ sch:{title:'In My Bag',tune:'Kìa con bướm vàng (Frère Jacques)',bpm:108,li
 ['ev-ery-thing is in it,','G4:.5 A4:.5 G4:.5 F4:.5 E4 C4','tất cả đều ở trong đó,'],
 ['off to school!','C4 G3 C4:2','đi học thôi!'],
 ['Off to school!','C4 G3 C4:2','Đi học thôi!']]},
-ani:{title:'Animals for Me',tune:'Old MacDonald Had a Farm',bpm:112,lines:[
+ani:{title:'Animals for Me',tune:'Old MacDonald Had a Farm',bpm:112,meter:4,tr:0,lines:[
 ['Look a-round, what can you see?','G4 G4 G4 D4 E4 E4 D4:2','Nhìn quanh xem, bé thấy gì nào?'],
-['An-i-mals for me!','B4 B4 A4 A4 G4:2','Bao nhiêu là con vật!'],
+['An-i-mals for me!','B4 B4 A4 A4 G4:3','Bao nhiêu là con vật!'],
 ['I can see a big el-e-phant,','D4 G4 G4 G4 D4 E4 E4 D4:2','Mình thấy một con voi to,'],
-['an-i-mals for me!','B4 B4 A4 A4 G4:2','bao nhiêu là con vật!'],
-['With a mon-key here and a ti-ger there,','D4:.5 D4:.5 G4 G4 G4:2 D4:.5 D4:.5 G4 G4 G4:2','Chú khỉ ở đây, chú hổ ở kia,'],
+['an-i-mals for me!','B4 B4 A4 A4 G4:3','bao nhiêu là con vật!'],
+['With a mon-key here and a ti-ger there,','D4:.5 D4:.5 G4 G4 G4:2 D4:.5 D4:.5 G4 G4 G4','Chú khỉ ở đây, chú hổ ở kia,'],
 ['here a cat, there a dog, ev-ery-where a rab-bit,','G4:.5 G4:.5 G4 G4:.5 G4:.5 G4 G4:.5 G4:.5 G4:.5 G4:.5 G4 G4','mèo ở đây, chó ở kia, đâu cũng thấy thỏ,'],
 ['Look a-round, what can you see?','G4 G4 G4 D4 E4 E4 D4:2','Nhìn quanh xem, bé thấy gì nào?'],
-['An-i-mals for me!','B4 B4 A4 A4 G4:3','Bao nhiêu là con vật!']]},
-fam:{title:'My Family',tune:'Mary Had a Little Lamb',bpm:104,lines:[
+['An-i-mals for me!','B4 B4 A4 A4 G4:4','Bao nhiêu là con vật!']]},
+fam:{title:'My Family',tune:'Mary Had a Little Lamb',bpm:104,meter:4,tr:2,lines:[
 ['Fa-ther, mo-ther, bro-ther, me,','E4 D4 C4 D4 E4 E4 E4:2','Bố, mẹ, anh trai và mình,'],
 ['fam-i-ly,','D4 D4 D4:2','gia đình,'],
 ['fam-i-ly.','E4 G4 G4:2','gia đình.'],
 ['Grand-pa, grand-ma and my sis-ter,','E4 D4 C4 D4 E4 E4 E4 E4','Ông, bà và chị gái mình,'],
-["we're a fam-i-ly!",'D4 D4 E4 D4 C4:3','cả nhà là một gia đình!']]},
-toy:{title:'I Love My Toys',tune:'London Bridge Is Falling Down',bpm:108,lines:[
+["we're a fam-i-ly!",'D4 D4 E4 D4 C4:4','cả nhà là một gia đình!']]},
+toy:{title:'I Love My Toys',tune:'London Bridge Is Falling Down',bpm:108,meter:4,tr:2,lines:[
 ['Ball and car and ted-dy bear,','G4:1.5 A4:.5 G4 F4 E4 F4 G4:2','Bóng, ô tô và gấu bông,'],
 ['ted-dy bear,','D4 E4 F4:2','gấu bông,'],
 ['ted-dy bear.','E4 F4 G4:2','gấu bông.'],
 ['Kite and ro-bot, train and plane,','G4:1.5 A4:.5 G4 F4 E4 F4 G4:2','Diều và người máy, tàu và máy bay,'],
-['I love my toys!','D4:2 G4:2 E4 C4:2','Mình yêu đồ chơi!']]},
-food:{title:'Yum Yum Yum',tune:'Hot Cross Buns',bpm:100,lines:[
+['I love my toys!','D4:2 G4:2 E4 C4:3','Mình yêu đồ chơi!']]},
+food:{title:'Yum Yum Yum',tune:'Hot Cross Buns',bpm:100,meter:4,tr:4,lines:[
 ['Rice and eggs,','E4 D4 C4:2','Cơm và trứng,'],
 ['milk and bread,','E4 D4 C4:2','sữa và bánh mì,'],
 ['ap-ple, ba-na-na, cake and juice,','C4:.5 C4:.5 C4:.5 C4:.5 D4:.5 D4:.5 D4:.5 D4:.5','táo, chuối, bánh ngọt và nước ép,'],
@@ -409,14 +411,14 @@ food:{title:'Yum Yum Yum',tune:'Hot Cross Buns',bpm:100,lines:[
 ['I like bread,','E4 D4 C4:2','mình thích bánh mì,'],
 ['milk and juice and cake and ap-ples,','C4:.5 C4:.5 C4:.5 C4:.5 D4:.5 D4:.5 D4:.5 D4:.5','sữa, nước ép, bánh ngọt và táo,'],
 ['I like food!','E4 D4 C4:2','mình thích đồ ăn!']]},
-body:{title:'Touch Your Nose',tune:'Row, Row, Row Your Boat',bpm:100,lines:[
+body:{title:'Touch Your Nose',tune:'Row, Row, Row Your Boat',bpm:96,meter:3,tr:0,lines:[
 ['Touch, touch, touch your nose,','C4:1.5 C4:1.5 C4 D4:.5 E4:1.5','Chạm, chạm, chạm vào mũi,'],
 ['touch your ears and eyes,','E4 D4:.5 E4 F4:.5 G4:3','chạm vào tai và mắt,'],
 ['arms and legs and hands and feet, mouth and ears and nose,','C5:.5 C5:.5 C5:.5 G4:.5 G4:.5 G4:.5 E4:.5 E4:.5 E4:.5 C4:.5 C4:.5 C4:.5','tay, chân, bàn tay, bàn chân, miệng, tai và mũi,'],
 ['this is my bo-dy!','G4 F4:.5 E4 D4:.5 C4:3','đây là cơ thể của mình!']]}
 };
 function freq(n){const m=/^([A-G])([#b]?)(\d)$/.exec(n);const s={C:0,D:2,E:4,F:5,G:7,A:9,B:11}[m[1]]+(m[2]==='#'?1:m[2]==='b'?-1:0);return 440*Math.pow(2,(12*(+m[3]+1)+s-69)/12)}
-Object.keys(SONGS).forEach(id=>{const sg=SONGS[id];sg.L=sg.lines.map(([tx,nt,vi])=>{const words=tx.split(' '),syl=[];words.forEach((w,wi)=>w.split('-').forEach(()=>syl.push(wi)));const notes=nt.trim().split(/\s+/).map(tk=>{const p=tk.split(':');return {f:freq(p[0]),b:p[1]?+p[1]:1}});const disp=words.map(w=>w.replace(/-/g,''));if(syl.length!==notes.length)console.warn('Lệch nốt',id,tx,syl.length,notes.length);return {words,disp,text:disp.join(' '),syl,notes,vi}})});
+Object.keys(SONGS).forEach(id=>{const sg=SONGS[id];sg.id=id;sg.L=sg.lines.map(([tx,nt,vi])=>{const words=tx.split(' '),syl=[];words.forEach((w,wi)=>w.split('-').forEach(()=>syl.push(wi)));const notes=nt.trim().split(/\s+/).map(tk=>{const p=tk.split(':');return {f:freq(p[0]),b:p[1]?+p[1]:1}});const disp=words.map(w=>w.replace(/-/g,''));if(syl.length!==notes.length)console.warn('Lệch nốt',id,tx,syl.length,notes.length);return {words,disp,text:disp.join(' '),syl,notes,vi}})});
 
 /* ---------- Truyện ngắn: [hình, câu tiếng Anh, dịch]; câu hỏi: [hỏi, dịch, [đáp án đúng, ...sai]] ---------- */
 const STORIES={
@@ -571,6 +573,8 @@ const stars3=n=>[0,1,2].map(i=>ico.star.replace('<svg','<svg class="'+(i<n?'on':
 const pic=x=>x.p[0]==='#'?`<span class="sw" style="--c:${x.p}"></span>`:`<span class="emo">${x.p}</span>`;
 
 /* ---------- Âm thanh ---------- */
+/* Giọng bé đọc truyện: mốc [bắt đầu, kết thúc] (giây) của từng câu trong stories/<đảo>.mp3 */
+const STORY_AUDIO={"col":{"p":[[0.15,1.625],[2.325,4.825],[5.525,7.3],[8.0,9.815],[10.515,12.29],[12.99,14.125],[14.825,16.195],[16.895,19.52]],"q":[[20.22,22.015],[22.715,24.34],[25.04,27.195],[27.895,29.605]]},"sch":{"p":[[0.15,1.86],[2.56,4.075],[4.775,6.655],[7.355,10.025],[10.725,12.305],[13.005,16.57],[17.27,19.3]],"q":[[20.0,21.58],[22.28,23.585],[24.285,25.545]]},"ani":{"p":[[0.15,2.775],[3.475,5.4],[6.1,8.13],[8.83,10.73],[11.43,14.805],[15.505,17.64],[18.34,20.455]],"q":[[21.155,23.08],[23.78,25.425],[26.125,27.92]]},"fam":{"p":[[0.15,2.455],[3.155,5.61],[6.31,8.785],[9.485,11.875],[12.575,15.5],[16.2,18.355],[19.055,20.745]],"q":[[21.445,22.79],[23.49,25.265],[25.965,27.12]]},"toy":{"p":[[0.15,1.815],[2.515,5.015],[5.715,8.13],[8.83,11.715],[12.415,14.57],[15.27,17.725],[18.425,20.155],[20.855,23.14]],"q":[[23.84,25.87],[26.57,28.3],[29.0,31.05]]},"food":{"p":[[0.15,3.525],[4.225,6.81],[7.51,9.52],[10.22,11.845],[12.545,14.15],[14.85,16.945],[17.645,19.8]],"q":[[20.5,21.995],[22.695,24.425],[25.125,26.94]]},"body":{"p":[[0.15,3.14],[3.84,5.465],[6.165,8.365],[9.065,10.625],[11.325,13.545],[14.245,16.02],[16.72,18.535]],"q":[[19.235,20.54],[21.24,23.46],[24.16,25.72]]}};
 const TTS='speechSynthesis' in window;
 let voices=[];const keep=[];
 function loadVoices(){try{voices=speechSynthesis.getVoices()||[]}catch(e){}}
@@ -578,8 +582,8 @@ if(TTS){loadVoices();try{speechSynthesis.addEventListener('voiceschanged',loadVo
 const vlang=v=>(v.lang||'').replace('_','-').toLowerCase();
 function voiceFor(l){if(!voices.length)loadVoices();if(l==='vi')return voices.find(v=>vlang(v).startsWith('vi'));const en=voices.filter(v=>vlang(v).startsWith('en'));return en.find(v=>vlang(v)==='en-us'&&/samantha|google us|aaron|nicky|ava|allison/i.test(v.name))||en.find(v=>vlang(v)==='en-us')||en.find(v=>vlang(v)==='en-gb')||en[0]}
 const hasVi=()=>!!voiceFor('vi');
-function say(text,l='en'){return new Promise(res=>{if(!TTS||!text)return res();try{
-const u=new SpeechSynthesisUtterance(text);const v=voiceFor(l);if(v)u.voice=v;u.lang=l==='vi'?'vi-VN':'en-US';u.rate=l==='vi'?1:S.set.rate;
+function say(text,l='en',o){return new Promise(res=>{if(!TTS||!text)return res();try{
+const u=new SpeechSynthesisUtterance(text);const v=voiceFor(l);if(v)u.voice=v;u.lang=l==='vi'?'vi-VN':'en-US';u.rate=o&&o.rate||(l==='vi'?1:S.set.rate);if(o&&o.pitch)u.pitch=o.pitch;
 let fin=false;const end=()=>{if(!fin){fin=true;res()}};u.onend=end;u.onerror=end;keep.push(u);if(keep.length>8)keep.shift();
 setTimeout(end,Math.min(9000,1500+text.length*110));
 if(speechSynthesis.speaking||speechSynthesis.pending){speechSynthesis.cancel();setTimeout(()=>speechSynthesis.speak(u),80)}else speechSynthesis.speak(u)}catch(e){res()}})}
@@ -596,8 +600,27 @@ function mnote(f,t,d){const a=AC;try{const o=a.createOscillator(),o2=a.createOsc
 g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.22,t+.015);g.gain.exponentialRampToValueAtTime(.06,t+Math.max(.12,d*.8));g.gain.exponentialRampToValueAtTime(.001,t+d+.3);
 o.connect(g);o2.connect(g2);g2.connect(g);g.connect(a.destination);o.start(t);o2.start(t);o.stop(t+d+.35);o2.stop(t+d+.35);melNodes.push(o,o2)}catch(e){}}
 function playLines(sg,idx,hl){return new Promise(res=>{const a=ac();if(!a)return res();stopMel();const my=songRun,spb=60/(sg.bpm*(S.set.tempo||1));let t=a.currentTime+.25;const ev=[];
-idx.forEach(li=>{const L=sg.L[li];L.notes.forEach((n,si)=>{mnote(n.f,t,n.b*spb*.92);ev.push({t,li,wi:L.syl[si]});t+=n.b*spb});t+=spb*.3});
+idx.forEach(li=>{const L=sg.L[li];L.notes.forEach((n,si)=>{mnote(n.f*Math.pow(2,(sg.tr||0)/12),t,n.b*spb*.92);ev.push({t,li,wi:L.syl[si]});t+=n.b*spb})});
 const end=t;const tick=()=>{if(my!==songRun)return res();const now=a.currentTime;let e=null;for(const x of ev){if(x.t<=now)e=x;else break}if(e&&hl)hl(e.li,e.wi);if(now>=end)return res();melRAF=requestAnimationFrame(tick)};tick()})}
+/* Giọng hát mẫu (file nhạc đã tổng hợp sẵn): v = có lời, i = chỉ nhạc; -s = bản chậm */
+const SBUF={},LOADED={};
+const loadBuf=name=>loadAudio('songs/'+name+'.mp3');
+function loadAudio(name){if(SBUF[name])return SBUF[name];const a=ac();SBUF[name]=fetch(name).then(r=>{if(!r.ok)throw new Error('http');return r.arrayBuffer()}).then(ab=>new Promise((res,rej)=>a.decodeAudioData(ab,res,rej))).then(b=>{LOADED[name]=1;return b});SBUF[name].catch(()=>{delete SBUF[name]});return SBUF[name]}
+function tline(sg,f){const spb=60/(sg.bpm*f);let t=sg.meter*spb;const ev=[],lt=[];sg.L.forEach((L,li)=>{lt.push(t);L.notes.forEach((n,si)=>{ev.push({t,li,wi:L.syl[si]});t+=n.b*spb})});return {ev,lt,end:t,spb}}
+const bufName=(sg,kind)=>sg.id+(kind==='i'?'-i':'')+(S.set.tempo<1?'-s':'');
+function preload(sg){if(!ac())return;['v','i'].forEach(k=>{loadBuf(bufName(sg,k)).catch(()=>{})})}
+function playClip(sid,kind,i){return new Promise(async res=>{ac();const my=songRun,seg=STORY_AUDIO[sid]&&STORY_AUDIO[sid][kind][i],sy=STORIES[sid],text=kind==='p'?sy.p[i][1]:sy.q[i][0];let buf;
+try{if(!seg)throw 0;buf=await loadAudio('stories/'+sid+'.mp3')}catch(e){if(my!==songRun)return res();await say(text,'en',{pitch:1.5,rate:.75});return res()}
+const a=ac();if(my!==songRun||!a)return res();stopMel();const src=a.createBufferSource();src.buffer=buf;src.connect(a.destination);const st=Math.max(0,seg[0]-.04),dur=seg[1]-st+.15;src.onended=()=>res();src.start(a.currentTime+.03,st,dur);melNodes.push(src);setTimeout(res,(dur+.6)*1000)})}
+function playSeg(sg,kind,from,to,hl,leadBeats){return new Promise(async res=>{ac();const my=songRun,f=S.set.tempo<1?.8:1,name=bufName(sg,kind);let buf;
+if(!LOADED['songs/'+name+'.mp3'])toast('Đang tải bài hát…');
+try{buf=await loadBuf(name)}catch(e){if(my!==songRun)return res();const idx=[];for(let i=from;i<to;i++)idx.push(i);await playLines(sg,idx,hl);return res()}
+const a=ac();if(my!==songRun||!a)return res();stopMel();
+const T=tline(sg,f),st=from===0?0:Math.max(0,T.lt[from]-(leadBeats?leadBeats*T.spb:.15)),en=to>=sg.L.length?buf.duration:Math.min(buf.duration,T.lt[to]-.06),dur=en-st;
+const src=a.createBufferSource(),g=a.createGain();src.buffer=buf;src.connect(g);g.connect(a.destination);const t0=a.currentTime+.05;
+g.gain.setValueAtTime(1,t0+Math.max(0,dur-.08));g.gain.linearRampToValueAtTime(.0001,t0+dur);src.start(t0,st,dur);melNodes.push(src);
+const ev=T.ev.filter(e=>e.li>=from&&e.li<to);
+const tick=()=>{if(my!==songRun)return res();const pos=st+(a.currentTime-t0);let e=null;for(const x of ev){if(x.t<=pos)e=x;else break}if(e&&hl)hl(e.li,e.wi);if(pos>=en){if(hl)hl(-1,-1);return res()}melRAF=requestAnimationFrame(tick)};tick()})}
 function lineHTML(L,i,mask){return `<p class="ly" data-l="${i}">${L.disp.map((w,wi)=>`<span data-w="${wi}"${mask&&wi>0?' class="mask"':''}>${mask&&wi>0?esc(w).replace(/[A-Za-z']/g,'_'):esc(w)}</span>`).join(' ')}<small class="vi">${esc(L.vi)}</small></p>`}
 function mkHL(root){let last=-1;return (li,wi)=>{if(!root)return;root.querySelectorAll('.ly.cur').forEach(e=>{if(+e.dataset.l!==li)e.classList.remove('cur')});root.querySelectorAll('.ly span.on').forEach(e=>e.classList.remove('on'));if(li<0){last=-1;return}const p=root.querySelector(`.ly[data-l="${li}"]`);if(!p)return;p.classList.add('cur');if(wi>=0){const s=p.querySelector(`[data-w="${wi}"]`);if(s)s.classList.add('on')}if(last!==li){last=li;try{p.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}}}}
 document.addEventListener('pointerdown',()=>{ac();if(TTS&&!window.__tts){window.__tts=1;try{speechSynthesis.speak(new SpeechSynthesisUtterance(' '))}catch(e){}}},{once:true});
@@ -665,25 +688,27 @@ function openSong(){const t=T[cur],sg=SONGS[t.id];
 $('#s-song').innerHTML=`<div class="wrap"><div class="hdr"><button class="round" data-sp="back" aria-label="Về đảo">${ico.back}</button><span class="ie">🎵</span><h2>${sg.title}<small>Giai điệu: ${sg.tune} · ${S.song[t.id]?'Bé đã thuộc ✓':'Bé chưa thuộc'}</small></h2></div>
 <div class="sbox"><div class="scol"><div class="lyr${showVi?' vi':''}" id="lyr">${sg.L.map((L,i)=>lineHTML(L,i)).join('')}</div><button class="go cta" data-sp="test">Thử thách: bé thuộc bài chưa? ›</button></div>
 <div class="sctl"><div class="panel"><h3>Nghe và hát theo</h3>
-<button class="go" data-sp="all">${ico.play}Nhạc và chữ chạy</button>
+<button class="go" data-sp="all">${ico.play}Nghe bé hát mẫu</button>
 <button class="btn2" data-sp="learn">${ico.note}Học từng câu</button>
-<button class="btn2" data-sp="read">${ico.spk}Nghe đọc lời</button>
+<button class="btn2" data-sp="kara">${ico.mic}Hát theo nhạc (không lời)</button>
 <button class="btn2" data-sp="stop" id="spstop" hidden>${ico.stop}Dừng lại</button>
+<p class="sstat" id="sstat" hidden></p>
 <div class="setr"><p>Tốc độ nhạc</p><span class="seg">${[[.8,'Chậm'],[1,'Vừa']].map(([v,l])=>`<button class="${S.set.tempo===v?'on':''}" data-tempo="${v}">${l}</button>`).join('')}</span></div>
-${segVi('sp')}<p class="mute">Chạm vào một câu để nghe riêng câu đó.</p></div></div></div></div>`;show('s-song')}
+${segVi('sp')}<p class="mute">Chạm vào một câu để nghe bé hát mẫu câu đó.</p></div></div></div></div>`;show('s-song');preload(sg)}
 $('#s-song').addEventListener('click',async e=>{const b=e.target.closest('button,.ly');if(!b)return;const sg=SONGS[T[cur].id],root=$('#lyr'),hl=mkHL(root),stp=on=>{const s=$('#spstop');if(s)s.hidden=!on};
-if(b.classList.contains('ly')){stopAll();const li=+b.dataset.l,my=songRun;hl(li,-1);stp(true);await say(sg.L[li].text);if(my===songRun)await playLines(sg,[li],hl);if(my===songRun){hl(-1,-1);stp(false)}return}
-const d=b.dataset;if(d.tempo){S.set.tempo=+d.tempo;save();$$('#s-song [data-tempo]').forEach(x=>x.classList.toggle('on',x===b));return}
+const stat=m=>{const e=$('#sstat');if(e){e.hidden=!m;e.textContent=m||''}};
+if(b.classList.contains('ly')){stopAll();const li=+b.dataset.l,my=songRun;hl(li,-1);stp(true);await playSeg(sg,'v',li,li+1,hl);if(my===songRun){hl(-1,-1);stp(false)}return}
+const d=b.dataset;if(d.tempo){stopAll();stp(false);stat('');S.set.tempo=+d.tempo;save();$$('#s-song [data-tempo]').forEach(x=>x.classList.toggle('on',x===b));preload(sg);return}
 const a=d.sp;if(!a)return;
 if(a==='back'){openIsle(cur);return}
-if(a==='stop'){stopAll();stp(false);return}
+if(a==='stop'){stopAll();stp(false);stat('');return}
 if(a==='vi'){showVi=!showVi;root.classList.toggle('vi',showVi);b.classList.toggle('on',showVi);b.textContent=showVi?'Đang hiện':'Hiện';return}
 if(a==='test'){startCh('song');return}
 stopAll();const my=songRun;stp(true);
-if(a==='all')await playLines(sg,sg.L.map((_,i)=>i),hl);
-else if(a==='read'){for(let i=0;i<sg.L.length&&my===songRun;i++){hl(i,-1);await say(sg.L[i].text)}}
-else if(a==='learn'){for(let i=0;i<sg.L.length&&my===songRun;i++){hl(i,-1);await say(sg.L[i].text);if(my!==songRun)break;await playLines(sg,[i],hl);if(my!==songRun)break;await sleep(700)}}
-if(my===songRun){hl(-1,-1);stp(false)}});
+if(a==='all'){stat('Bé nghe hát mẫu nhé');await playSeg(sg,'v',0,sg.L.length,hl)}
+else if(a==='kara'){stat('Bé tự hát theo nhạc nhé!');await playSeg(sg,'i',0,sg.L.length,hl)}
+else if(a==='learn'){for(let i=0;i<sg.L.length&&my===songRun;i++){stat(`Câu ${i+1}/${sg.L.length}: nghe hát mẫu`);hl(i,-1);await playSeg(sg,'v',i,i+1,hl);if(my!==songRun)break;await sleep(350);if(my!==songRun)break;stat(`Câu ${i+1}/${sg.L.length}: đến lượt bé hát!`);hl(i,-1);await playSeg(sg,'i',i,i+1,hl,1);if(my!==songRun)break;await sleep(450)}}
+if(my===songRun){hl(-1,-1);stp(false);stat('')}});
 
 /* ---------- Truyện ---------- */
 let stI=0;
@@ -692,9 +717,9 @@ $('#s-story').innerHTML=`<div class="wrap"><div class="hdr"><button class="round
 <div class="sbox"><div class="book"><div class="scene" id="scene"></div><p class="stxt" id="stxt" data-sb="say"></p><p class="svi" id="svi"></p>
 <div class="bnav"><button class="round" data-sb="prev" aria-label="Trang trước">${ico.back}</button><span class="pg" id="pg"></span><button class="round" data-sb="next" aria-label="Trang sau">${ico.fwd}</button></div></div>
 <div class="sctl"><div class="panel"><h3>Đọc truyện</h3><button class="go" data-sb="all">${ico.play}Nghe cả truyện</button><button class="btn2" data-sb="stop" id="sbstop" hidden>${ico.stop}Dừng lại</button>${segVi('sb')}<p class="mute">Chạm vào câu để nghe lại. Bấm mũi tên để lật trang.</p></div>
-<button class="go cta" data-sb="test">Thử thách truyện ›</button></div></div></div>`;show('s-story');drawPage()}
+<button class="go cta" data-sb="test">Thử thách truyện ›</button></div></div></div>`;show('s-story');drawPage();if(ac())loadAudio('stories/'+t.id+'.mp3').catch(()=>{})}
 function drawPage(){const sy=STORIES[T[cur].id],p=sy.p[stI];$('#scene').textContent=p[0];$('#stxt').textContent=p[1];$('#stxt').classList.remove('on');const v=$('#svi');v.textContent=p[2];v.hidden=!showVi;$('#pg').textContent=`${stI+1} / ${sy.p.length}`;$('#s-story [data-sb="prev"]').classList.toggle('dis',stI===0);$('#s-story [data-sb="next"]').classList.toggle('dis',stI===sy.p.length-1)}
-async function readPage(){const tx=$('#stxt');tx.classList.add('on');await say(STORIES[T[cur].id].p[stI][1]);tx.classList.remove('on')}
+async function readPage(){const tx=$('#stxt');tx.classList.add('on');await playClip(T[cur].id,'p',stI);tx.classList.remove('on')}
 $('#s-story').addEventListener('click',async e=>{const b=e.target.closest('[data-sb]');if(!b)return;const a=b.dataset.sb,sy=STORIES[T[cur].id],stp=on=>{const s=$('#sbstop');if(s)s.hidden=!on};
 if(a==='back'){openIsle(cur);return}
 if(a==='test'){startCh('story');return}
@@ -721,7 +746,7 @@ const seq=[];sg.L.forEach(L=>{if(!seq.includes(L.text))seq.push(L.text)});const 
 qs.push({ty:'O1',seq:s4,tiles:mix(s4),instr:'Xếp các câu hát theo đúng thứ tự',say:''});
 qs.push({ty:'P1',kind:'song',say:'',instr:'Bé hát cả bài cho ba mẹ nghe, không nhìn lời'});return qs}
 function storyQs(t){const sy=STORIES[t.id];
-const qs=shuffle(sy.q.slice()).slice(0,3).map(([q,vi,o])=>({ty:'Q1',q,vi,ans:o[0],opts:shuffle(o.slice()),audio:q,say:isTxt(o[0])?o[0]:''}));
+const qs=shuffle(sy.q.map((x,qi)=>[...x,qi])).slice(0,3).map(([q,vi,o,qi])=>({ty:'Q1',q,vi,ans:o[0],opts:shuffle(o.slice()),clip:[t.id,'q',qi],say:''}));
 const s4=shuffle(sy.p.map((_,i)=>i)).slice(0,4).sort((a,b)=>a-b).map(i=>sy.p[i][1]);
 qs.push({ty:'O1',seq:s4,tiles:mix(s4),instr:'Xếp các câu trong truyện theo đúng thứ tự',say:''});
 qs.push({ty:'P1',kind:'story',say:'',instr:'Bé nhìn hình và kể lại truyện cho ba mẹ nghe'});return qs}
@@ -764,7 +789,7 @@ case 'W1':return `<div class="qbody"><div class="prompt row">${BP(x,'md')}${SP(x
 case 'W2':return `<div class="qbody split"><div class="prompt">${BP(x,'md')}<div class="word">${[...x.w].map((c,i)=>i===q.idx?'<span class="bl" id="bl">&nbsp;</span>':c===' '?'&nbsp;':c).join('')}</div>${SP(x.w,'sbtn big')}</div><div class="opts three">${q.opts.map((c,j)=>`<button class="opt txt" data-o="${j}">${c}</button>`).join('')}</div></div>`;
 case 'W3':return `<div class="qbody"><div class="prompt row">${BP(x,'md')}${SP(x.s,'sbtn big')}</div><div class="line" id="line"></div><div class="tiles" id="tl">${q.tiles.map((w,j)=>`<button class="tile wd" data-t="${j}">${w}</button>`).join('')}</div></div>`;
 case 'C1':{const ln=q.L.disp.map((w,wi)=>wi===q.wi?esc(w).replace(/[A-Za-z']+/,'<span class="bl" id="bl">&nbsp;</span>'):esc(w)).join(' ');return `<div class="qbody split"><div class="prompt">${q.prev?`<div class="ctx">${esc(q.prev.text)}</div>`:''}<div class="sent">${ln}</div>${q.nxt?`<div class="ctx">${esc(q.nxt.text)}</div>`:''}</div><div class="opts three">${q.opts.map((o,j)=>`<button class="opt txt" data-o="${j}">${esc(o)}</button>`).join('')}</div></div>`}
-case 'Q1':{const tx=q.opts.every(isTxt);return `<div class="qbody split"><div class="prompt"><div class="qline">${SP(q.q,'sbtn big')}<span class="sent sm">${esc(q.q)}</span></div><p class="hint">${esc(q.vi)}</p></div><div class="opts${tx?' list':''}">${q.opts.map((o,j)=>`<button class="opt${tx?' txt':''}" data-o="${j}" aria-label="Lựa chọn ${j+1}">${isTxt(o)?esc(o):o[0]==='#'?`<span class="sw" style="--c:${o}"></span>`:`<span class="emo">${o}</span>`}</button>`).join('')}</div></div>`}
+case 'Q1':{const tx=q.opts.every(isTxt);return `<div class="qbody split"><div class="prompt"><div class="qline"><button class="sbtn big" data-clip="${q.clip.join('|')}" aria-label="Nghe câu hỏi">${ico.spk}</button><span class="sent sm">${esc(q.q)}</span></div><p class="hint">${esc(q.vi)}</p></div><div class="opts${tx?' list':''}">${q.opts.map((o,j)=>`<button class="opt${tx?' txt':''}" data-o="${j}" aria-label="Lựa chọn ${j+1}">${isTxt(o)?esc(o):o[0]==='#'?`<span class="sw" style="--c:${o}"></span>`:`<span class="emo">${o}</span>`}</button>`).join('')}</div></div>`}
 case 'O1':return `<div class="qbody"><div class="line col" id="line"></div><div class="tiles col" id="tl">${q.tiles.map((w,j)=>`<button class="tile ln" data-t="${j}">${esc(w)}</button>`).join('')}</div></div>`;
 case 'P1':{let body;if(q.kind==='song'){body=`<div class="lyr" id="plyr">${SONGS[T[cur].id].L.map((L,i)=>lineHTML(L,i,true)).join('')}</div>`}else{body=`<div class="pgrid2">${STORIES[T[cur].id].p.map(p=>`<div class="pcell"><div class="e">${p[0]}</div><p>${esc(p[1].split(' ').slice(0,2).join(' '))} …</p></div>`).join('')}</div>`}
 return `<div class="qbody">${body}<div class="pconf">${q.kind==='song'?`<button class="btn2" data-pm>${ico.play}Bật nhạc</button>`:''}<button class="hold sm" id="phold" aria-label="Ba mẹ nhấn giữ 3 giây để xác nhận"><svg class="ring" viewBox="0 0 140 140"><circle cx="70" cy="70" r="64"/></svg>Giữ 3 giây</button><p class="mute">Ba mẹ nghe bé ${q.kind==='song'?'hát':'kể'}. Nếu bé đã thuộc, ba mẹ nhấn giữ nút tròn 3 giây.</p><button class="again" data-pf>Tập thêm</button></div></div>`}}}
@@ -774,7 +799,7 @@ $('#s-quiz').innerHTML=`<div class="qwrap"><div class="qhead"><button class="rou
 if(['W1','W3','O1'].includes(q.ty))drawW(q);
 if(q.ty==='P1'){const h=$('#phold');let tm;const stop=()=>{clearTimeout(tm);h.classList.remove('go2')};h.addEventListener('pointerdown',e=>{e.preventDefault();if(q.locked)return;h.classList.add('go2');tm=setTimeout(()=>{stopMel();correct(q)},3000)});['pointerup','pointerleave','pointercancel'].forEach(v=>h.addEventListener(v,stop));h.addEventListener('contextmenu',e=>e.preventDefault())}
 const a=q.audio!==undefined?q.audio:q.x?{L1:q.x.w,L2:q.x.s,S2:q.t.q,S3:q.x.s,W1:q.x.w}[q.ty]:'';const ins=S.set.vi&&hasVi()&&q.ty!==Q.last;Q.last=q.ty;
-(ins?say(instr(q),'vi'):Promise.resolve()).then(()=>{if(a&&cq()===q&&!q.locked&&$('#s-quiz').classList.contains('show'))say(a)})}
+(ins?say(instr(q),'vi'):Promise.resolve()).then(()=>{if(cq()!==q||q.locked||!$('#s-quiz').classList.contains('show'))return;if(q.clip)playClip(...q.clip);else if(a)say(a)})}
 const instr=q=>q.instr||INSTR[q.ty];
 const reinf=q=>q.say!==undefined?q.say:['L2','R3','R4','S3','W3'].includes(q.ty)?q.x.s:q.ty==='S2'?ans2(q.x):q.x.w;
 function correct(q){if(q.locked)return;q.locked=true;const first=q.tries===0,lg=S.log[q.sk];if(lg)lg.t++;if(q.ty==='P1')Q.pdone=true;
@@ -808,8 +833,9 @@ function next(){stopAll();Q.i++;if(Q.i>=Q.qs.length)return finish();if(cq().ty==
 function exitQuiz(){stopAll();const k=Q&&Q.kind;Q=null;if(k==='review')show('s-map');else openIsle(cur)}
 $('#s-quiz').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!Q)return;const q=cq(),d=b.dataset;
 if(d.qx!==undefined)return exitQuiz();if(d.say!==undefined)return void say(d.say);
+if(d.clip!==undefined){stopAll();const c=d.clip.split('|');playClip(c[0],c[1],+c[2]);return}
 if(d.vi!==undefined){if(!hasVi())toast('iPad chưa có giọng đọc tiếng Việt. Ba mẹ đọc giúp bé nhé.');else say(instr(q),'vi');return}
-if(d.pm!==undefined){stopAll();const sg=SONGS[T[cur].id];playLines(sg,sg.L.map((_,i)=>i),mkHL($('#plyr')));return}
+if(d.pm!==undefined){stopAll();const sg=SONGS[T[cur].id];playSeg(sg,'i',0,sg.L.length,mkHL($('#plyr')));return}
 if(d.pf!==undefined){stopAll();Q.failed=true;return finish()}
 if(d.next!==undefined)return next();if(d.o!==undefined)return choose(q,+d.o,b);if(d.t!==undefined)return tapTile(q,+d.t);if(d.s!==undefined)return tapSlot(q,+d.s);
 if(d.mic!==undefined)return micTap(q,b);if(d.model!==undefined)return void say(model(q));
